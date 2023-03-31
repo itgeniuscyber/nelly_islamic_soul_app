@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "532228620739",
+    "firebase_url": "https://muslim-soul-app-default-rtdb.firebaseio.com",
+    "project_id": "muslim-soul-app",
+    "storage_bucket": "muslim-soul-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532228620739:android:e8894a29a6ba440ba87d76",
+        "android_client_info": {
+          "package_name": "com.itgeniuscyber.islamic_soul_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "532228620739-cj0bus769vdtehb18c0rd8e77947qhth.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPvpsLU6WFxwdB6MAWrpvAOheuFSgQoiM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "532228620739-cj0bus769vdtehb18c0rd8e77947qhth.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

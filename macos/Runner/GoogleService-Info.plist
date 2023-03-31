@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>532228620739-q9oolb1e2dnqud2ok5jhjnv3gc19f5pr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.532228620739-q9oolb1e2dnqud2ok5jhjnv3gc19f5pr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB66_ySY5lOswCprMsQW6SE7obCr6LqZjM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>532228620739</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.muslimSoulApp</string>
+	<key>PROJECT_ID</key>
+	<string>muslim-soul-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>muslim-soul-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:532228620739:ios:913f3683e1ab5eefa87d76</string>
+	<key>DATABASE_URL</key>
+	<string>https://muslim-soul-app-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
