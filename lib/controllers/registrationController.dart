@@ -93,7 +93,7 @@ class RegisterController extends GetxController {
     userRegister(email.trim(), password.toString().trim()).then((credentials) {
       if (credentials != null) {
       } else {
-        snackMessage("User already exist");
+        snackMessage("User already exist, Login");
       }
       isLoading.value = false;
     });
@@ -113,14 +113,15 @@ class RegisterController extends GetxController {
             await FirebaseAuth.instance.currentUser!.sendEmailVerification();
             Get.offAllNamed('/login');
           });
-          return;
+          // Get.offAllNamed('/login');
         }
       });
     } on FirebaseAuthException catch (e) {
-      snackMessage('user already exist');
+      snackMessage('user already exists now go and Login after verification');
     } catch (e) {}
 
-    return userCredential;
+    userCredential;
+    Get.offAllNamed('/login');
   }
 
   Future<String?> uploadFile(filePath) async {

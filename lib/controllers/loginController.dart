@@ -51,19 +51,24 @@ class LoginController extends GetxController {
       await _auth
           .signInWithEmailAndPassword(
               email: email.trim(), password: password.trim())
-          .then((value) async {
-        if (value != null) {
-          User? user = FirebaseAuth.instance.currentUser;
-          if (!user!.emailVerified) {
-            snackMessage('please verify email first');
-            return;
-          }
+          .then(
+        (value) async {
+          if (value != null) {
+            User? user = FirebaseAuth.instance.currentUser;
+            if (!user!.emailVerified) {
+              snackMessage('please verify email first');
+              return;
+            }
 
-          // Get.offAllNamed('/main');
-        } else {
-          snackMessage("User not found");
-        }
-      });
+            // Get.offAllNamed('/main');
+          } else {
+            snackMessage("User not found");
+          }
+          if (email != "" && password != "") {
+            Get.offAllNamed('/main');
+          }
+        },
+      );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         snackMessage("No user found for that email.");

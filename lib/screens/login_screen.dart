@@ -28,23 +28,23 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     super.initState();
-    check();
+    // check();
   }
 
-  check() async {
-    var user = await FirebaseAuth.instance.currentUser;
-    if (user != null) {
-      // ignore: use_build_context_synchronously
-      Navigator.pushReplacement(
-        context,
-        CupertinoPageRoute(builder: (context) => const MainScreen()),
-      );
-    } else {
-      setState(() {
-        load = false;
-      });
-    }
-  }
+  // check() async {
+  //   var user = await FirebaseAuth.instance.currentUser;
+  //   if (user != null) {
+  //     // ignore: use_build_context_synchronously
+  //     Navigator.pushReplacement(
+  //       context,
+  //       CupertinoPageRoute(builder: (context) => const MainScreen()),
+  //     );
+  //   } else {
+  //     setState(() {
+  //       load = false;
+  //     });
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -183,10 +183,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                                 onPressed: () {
                                   _loginController.login();
-                                  Navigator.pushReplacement(
-                                      context,
-                                      CupertinoPageRoute(
-                                          builder: (context) => MainScreen()));
+                                  // Navigator.pushReplacement(
+                                  //     context,
+                                  //     CupertinoPageRoute(
+                                  //         builder: (context) => MainScreen()));
                                 },
                               ),
                             ),
