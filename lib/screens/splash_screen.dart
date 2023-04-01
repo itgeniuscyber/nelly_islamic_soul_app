@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_soul_app/screens/main_screen.dart';
 import 'package:muslim_soul_app/screens/onboarding_screen.dart';
@@ -35,7 +36,9 @@ class _SplashScreenState extends State<SplashScreen> {
     //         })));
 
     Timer(Duration(seconds: 3), () {
-      Get.offNamed("/login");
+      // Get.offNamed("/login");
+      Navigator.pushReplacement(context,
+          CupertinoPageRoute(builder: (context) => OnBoardingScreen()));
     });
   }
 

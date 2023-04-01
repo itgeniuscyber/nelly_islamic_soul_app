@@ -58,7 +58,8 @@ class LoginController extends GetxController {
             snackMessage('please verify email first');
             return;
           }
-          Get.offAllNamed('/main');
+
+          // Get.offAllNamed('/main');
         } else {
           snackMessage("User not found");
         }

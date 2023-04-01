@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -5,12 +7,44 @@ import 'package:get/get.dart';
 import '../Widgets/decoration_widget.dart';
 import '../constants/Constants.dart';
 import '../controllers/loginController.dart';
+import 'main_screen.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
 // login controller
   LoginController _loginController = Get.put(LoginController());
+
+  // my code auth
+  bool visible = false;
+
+  bool load = true;
+
+  @override
+  void initState() {
+    super.initState();
+    check();
+  }
+
+  check() async {
+    var user = await FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      // ignore: use_build_context_synchronously
+      Navigator.pushReplacement(
+        context,
+        CupertinoPageRoute(builder: (context) => const MainScreen()),
+      );
+    } else {
+      setState(() {
+        load = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +62,7 @@ class LoginScreen extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     height: height * 0.3,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Constants.kPrimary,
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(70),
@@ -79,7 +113,7 @@ class LoginScreen extends StatelessWidget {
                                   context, "Enter Email", Icons.email),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Padding(
@@ -97,7 +131,7 @@ class LoginScreen extends StatelessWidget {
                                   context, "Enter Password", Icons.vpn_key),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Container(
@@ -149,6 +183,10 @@ class LoginScreen extends StatelessWidget {
                                 ),
                                 onPressed: () {
                                   _loginController.login();
+                                  Navigator.pushReplacement(
+                                      context,
+                                      CupertinoPageRoute(
+                                          builder: (context) => MainScreen()));
                                 },
                               ),
                             ),

@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:muslim_soul_app/constants/Constants.dart';
+import 'package:muslim_soul_app/screens/login_screen.dart';
 import 'package:muslim_soul_app/screens/main_screen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -98,8 +100,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     fontWeight: FontWeight.w700, color: Constants.kPrimary)),
             onDone: () {
               // On Done button pressed
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => MainScreen()));
+              Navigator.pushReplacement(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) => LoginScreen(),
+                  ));
             },
             // onSkip: () {
             //   // On Skip button pressed
